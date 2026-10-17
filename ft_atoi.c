@@ -1,6 +1,5 @@
-//#include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
+
 int ft_atoi(const char *str)
 {
   int res;
@@ -27,16 +26,4 @@ int ft_atoi(const char *str)
   }
 
   return (res * sign);
-}
-
-
-int main(void)
-{
-  printf("%d\n", ft_atoi("   8585875876587651231231"));
-  printf("%d\n", atoi("-2147483648"));
-  printf("%d\n", ft_atoi("-2147483648"));
-  printf("%d\n",ft_atoi("   -asd++--1231231"));
-  printf("%d\n",ft_atoi("   -++--123asd1231"));
-
-  return 0;
 }
