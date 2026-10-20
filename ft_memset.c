@@ -12,6 +12,20 @@ void *ft_memset(void *s, int c, size_t n)
     res[i] = (unsigned char)c;
     i++;
   }
-
   return (s);
+}
+
+int main(void)
+{
+  // 2147483647
+  //
+  int i;
+  int k = 1337;
+  int j = 0;
+  unsigned char *p;
+
+  ft_memset(&i, 128, sizeof(int));
+  printf("%d",i);
+
+  return (0);
 }

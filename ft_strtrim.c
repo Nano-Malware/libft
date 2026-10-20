@@ -47,12 +47,12 @@ char *ft_strtrim(char const *s1, char const *set)
   return (res);
 }
 
-int	main(void)
-{
-	char	*result;
-
-	result = ft_strtrim("xyzhello", "xaz");
-	printf("Result: %s\n", result);
-	free(result);
-	return (0);
-}
+// int	main(void)
+// {
+// 	char	*result;
+//
+// 	result = ft_strtrim("xyzhello", "xaz");
+// 	printf("Result: %s\n", result);
+// 	free(result);
+// 	return (0);
+// }
