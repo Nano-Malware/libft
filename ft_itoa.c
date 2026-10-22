@@ -5,53 +5,54 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/20 19:39:55 by rbourjal          #+#    #+#             */
-/*   Updated: 2026/10/20 21:11:43 by rbourjal         ###   ########.fr       */
+/*   Created: 2026/10/21 14:53:57 by rbourjal          #+#    #+#             */
+/*   Updated: 2026/10/21 14:54:05 by rbourjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static  char *allocat_num(int n, char *res)
+static void	count_check_sign(long *nb, size_t *len)
 {
-  long i;
+	long	n;
 
-  i = n;
-  int sign = (n < 0);
-  if (sign)
-    i *= i;
-  while (n > 0)
-  {
-    i++;
-    n /= 10;
-  }
-  res = malloc(i + 1 + sign);
-  if (!res)
-    return (NULL);
-
-  return (res);
+	if ((*nb) < 0)
+	{
+		(*nb) *= -1;
+		(*len) = 1;
+	}
+	if ((*nb) == 0)
+	{
+		(*len) = 1;
+		return ;
+	}
+	n = *nb;
+	while (n > 0)
+	{
+		n /= 10;
+		(*len)++;
+	}
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-  char  *res;
-  int i;
+	char	*str;
+	size_t	len;
+	long	nb;
 
-  res = allocat_num(n, res);
-
-  while (n > 0)
-  {
-    res[i] = n % 10;
-    i++;
-  }
-  res[i] = '\0';
-
-  return (res);
-}
-
-int main(void)
-{
-
-  printf("%s",ft_itoa(21231));
-  return (0);
+	len = 0;
+	nb = n;
+	count_check_sign(&nb, &len);
+	str = malloc(len + 1);
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	if (n < 0)
+		str[0] = '-';
+	while (len > (n < 0))
+	{
+		str[--len] = (nb % 10) + '0';
+		nb /= 10;
+	}
+	return (str);
 }

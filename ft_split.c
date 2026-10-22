@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/20 21:12:02 by rbourjal          #+#    #+#             */
+/*   Updated: 2026/10/20 21:12:07 by rbourjal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t	count_word(const char *str, char c)
@@ -64,20 +76,4 @@ char	**ft_split(const char *str, char c)
 		j++;
 	}
 	return (res);
-}
-#include <stdio.h>
-
-int	main(void)
-{
-	char	**res;
-	int		i;
-
-	res = ft_split("hhh      ", ' ');
-	i = 0;
-	while (res[i])
-	{
-		printf("-%s-", res[i]);
-		i++;
-	}
-	free_words(res, i);
 }
