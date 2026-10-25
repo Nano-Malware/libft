@@ -1,5 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/23 20:02:09 by rbourjal          #+#    #+#             */
+/*   Updated: 2026/10/23 20:02:12 by rbourjal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 static int count_digits(long n)
 {
@@ -30,15 +41,9 @@ void ft_putnbr_fd(int n, int fd)
   digits = count_digits(nb);
   while (digits > 0)
   {
-    nb / digits;
-    nb % digits;
-    write(1, )
+    c = '0' + (nb / digits);
+    write(fd, &c, 1);
+    nb = nb % digits;
     digits /= 10;
   }
-}
-
-int main(void)
-{
-  int fd = open("nano.txt", O_CREAT | O_RDWR | O_TRUNC, 0644);
-  ft_putnbr_fd(1023, fd);
 }

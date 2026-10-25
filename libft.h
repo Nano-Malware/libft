@@ -6,6 +6,15 @@
 # include <stddef.h>
 # include <stdint.h>
 
+typedef struct s_list
+{
+  void          *contest;
+  struct s_list *next;
+} t_list;
+
+# add the missing prototypes
+
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
