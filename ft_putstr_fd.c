@@ -1,21 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 14:56:44 by rbourjal          #+#    #+#             */
+/*   Updated: 2026/10/26 14:56:44 by rbourjal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-  size_t i;
+	size_t	i;
 
-  i = 0;
-  while (s[i])
-  {
-    write(fd, &s[i], 1);
-    i++;
-  }
-}
-
-int main(int argc, char *argv[])
-{
-  int fd = open("nano.txt", O_CREAT | O_RDWR | O_TRUNC, 0644);
-  ft_putstr_fd("hi nn txt", fd);
-  close(fd);
-  return (0);
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

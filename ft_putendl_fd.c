@@ -1,12 +1,21 @@
-void ft_putendl_fd(char *s,  int fd)
-{
-  size_t i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 14:56:44 by rbourjal          #+#    #+#             */
+/*   Updated: 2026/10/26 16:46:58 by rbourjal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-  i += 0
-  while (s[i])
-  {
-    write(fd, &str[i], 1);
-    i++;
-  }
-  write(fd, "\n", 0);
+#include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }

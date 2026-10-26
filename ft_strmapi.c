@@ -6,18 +6,18 @@
 /*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 17:48:57 by rbourjal          #+#    #+#             */
-/*   Updated: 2026/10/23 00:15:05 by rbourjal         ###   ########.fr       */
+/*   Updated: 2026/10/26 15:02:40 by rbourjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)) // read more about how the pointer to a function work and how it pointes in memmory
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
 	char	*res;
 
-	if (!s || !f) // what is the test that testes this
+	if (!s || !f)
 		return (NULL);
 	res = malloc(ft_strlen(s) + 1);
 	if (!res)
@@ -25,7 +25,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)) // read more abou
 	i = 0;
 	while (s[i])
 	{
-		res[i] = f((unsigned int)i, s[i]); // if the system is 64bit and i is holding the max of the size what happens to the value of it.
+		res[i] = f((unsigned int)i, s[i]);
 		i++;
 	}
 	res[i] = '\0';

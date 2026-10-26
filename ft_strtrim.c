@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 14:56:44 by rbourjal          #+#    #+#             */
+/*   Updated: 2026/10/26 15:09:17 by rbourjal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 static int	is_in_set(const char *set, char c)
 {
@@ -16,17 +26,15 @@ static int	is_in_set(const char *set, char c)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
-	int		start;
-	int		end;
-	int		i;
+	size_t	start;
+	size_t	end;
+	size_t	i;
 
 	i = 0;
 	while (s1[i] && is_in_set(set, s1[i]))
 		i++;
 	start = i;
-	end = 0;
-	while (s1[end])
-		end++;
+	end = ft_strlen(s1);
 	while (start < end && is_in_set(set, s1[end - 1]))
 		end--;
 	res = malloc(end - start + 1);
@@ -34,21 +42,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	while (start < end)
-	{
-		res[i] = s1[start];
-		start++;
-		i++;
-	}
+		res[i++] = s1[start++];
 	res[i] = '\0';
 	return (res);
 }
-
-// int	main(void)
-// {
-// 	char	*result;
-//
-// 	result = ft_strtrim("xyzhello", "xaz");
-// 	printf("Result: %s\n", result);
-// 	free(result);
-// 	return (0);
-// }
