@@ -6,7 +6,7 @@
 /*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 21:12:02 by rbourjal          #+#    #+#             */
-/*   Updated: 2026/10/28 16:22:29 by rbourjal         ###   ########.fr       */
+/*   Updated: 2026/10/28 23:08:29 by rbourjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	**ft_split(const char *str, char c)
 	if (!str)
 		return (NULL);
 	cw = count_word(str, c);
-	res = ft_calloc(sizeof(char *), (cw + 1));
+	res = ft_calloc((cw + 1), sizeof(char *));
 	if (!res)
 		return (NULL);
 	if (!fill_words(res, str, c, cw))
