@@ -1,10 +1,12 @@
 *This project has been created as part of the 42 curriculum by rbourjal.*
 
-# Libft
+#Libft
 
 ## Description
 
-Libft is a C library developed as part of the 42 curriculum. It recreates standard C library functions and adds utility functions, including string manipulation, memory management, and linked-list operations.
+Libft is a C library developed as part of the 42 curriculum. It recreates standard C library functions and adds utility functions,
+	including string manipulation, memory management,
+	and linked-list operations.
 
 ## Instructions
 
@@ -31,9 +33,12 @@ cc main.c -L. -lft -o program
 ```
 ## Library Contents
 
-- **Libc functions:** Character checks, memory operations, string manipulation, and conversions.
-- **Additional functions:** String utilities, integer-to-string conversion, and output to file descriptors.
-- **Linked lists:** Node creation, insertion, traversal, deletion, and list manipulation.
+- **Libc functions:** Character checks, memory operations, string manipulation,
+	and conversions.
+- **Additional functions:** String utilities, integer-to-string conversion,
+	and output to file descriptors.
+- **Linked lists:** Node creation, insertion, traversal, deletion,
+	and list manipulation.
 
 ## Resources
 
@@ -45,4 +50,3 @@ cc main.c -L. -lft -o program
 **AI usage:**
 - AI was used to help understand C concepts.
 - AI assisted with explaining function behavior and investigating edge cases.
-

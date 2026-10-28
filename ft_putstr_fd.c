@@ -6,7 +6,7 @@
 /*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 14:56:44 by rbourjal          #+#    #+#             */
-/*   Updated: 2026/10/26 14:56:44 by rbourjal         ###   ########.fr       */
+/*   Updated: 2026/10/28 16:32:49 by rbourjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{

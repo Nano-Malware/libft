@@ -6,7 +6,7 @@
 /*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 14:56:44 by rbourjal          #+#    #+#             */
-/*   Updated: 2026/10/26 15:09:17 by rbourjal         ###   ########.fr       */
+/*   Updated: 2026/10/28 15:02:22 by rbourjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	i;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
 	while (s1[i] && is_in_set(set, s1[i]))
 		i++;

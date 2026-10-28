@@ -6,7 +6,7 @@
 /*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 14:56:44 by rbourjal          #+#    #+#             */
-/*   Updated: 2026/10/26 14:56:44 by rbourjal         ###   ########.fr       */
+/*   Updated: 2026/10/28 16:34:17 by rbourjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strdup(const char *s)
 {
 	size_t	duplen;
+	size_t	i;
 	char	*res;
-	int		i;
 
 	duplen = ft_strlen(s);
 	res = malloc(duplen + 1);

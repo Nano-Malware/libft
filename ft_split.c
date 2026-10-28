@@ -6,7 +6,7 @@
 /*   By: rbourjal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 21:12:02 by rbourjal          #+#    #+#             */
-/*   Updated: 2026/10/20 21:12:07 by rbourjal         ###   ########.fr       */
+/*   Updated: 2026/10/28 16:22:29 by rbourjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,14 @@ static void	free_words(char **res, size_t size)
 	free(res);
 }
 
-char	**ft_split(const char *str, char c)
+static int	fill_words(char **res, const char *str, char c, size_t cw)
 {
-	char	**res;
 	size_t	i;
 	size_t	j;
 
-	res = ft_calloc(sizeof(char *), (count_word(str, c) + 1));
-	if (!res)
-		return (NULL);
 	i = 0;
 	j = 0;
-	while (j < count_word(str, c))
+	while (j < cw)
 	{
 		while (str[i] && str[i] == c)
 			i++;
@@ -70,10 +66,26 @@ char	**ft_split(const char *str, char c)
 		if (!res[j])
 		{
 			free_words(res, j);
-			return (NULL);
+			return (0);
 		}
 		i += word_len(str + i, c);
 		j++;
 	}
+	return (1);
+}
+
+char	**ft_split(const char *str, char c)
+{
+	char	**res;
+	size_t	cw;
+
+	if (!str)
+		return (NULL);
+	cw = count_word(str, c);
+	res = ft_calloc(sizeof(char *), (cw + 1));
+	if (!res)
+		return (NULL);
+	if (!fill_words(res, str, c, cw))
+		return (NULL);
 	return (res);
 }
